@@ -5,6 +5,9 @@ html {
   color: #4a3828;
   background-color: #fff8e7;
 }
+button {
+  background-color: #f6c945;
+}
 #hbd {
   font-weight: bold;
   font-size: 20px;
@@ -17,7 +20,8 @@ html {
   margin-left: auto;
   padding: 15px;
   border: 2px solid #f6c945;
-  background-color: #fffdf5;
+  /*  background-color: #fffdf5; */
+  box-shadow: 1px 1px 5px #332b0d;
 }
 #secondsection {
   width: 700px;
