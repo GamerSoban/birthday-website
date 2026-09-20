@@ -1,5 +1,5 @@
 [x] PLAN
-[ ] Make HTML file
+[x] Make HTML file
 [ ] Make CSS
 [ ] Make javascript (if needed)
-[ ] Final moments
+[x] Final moments

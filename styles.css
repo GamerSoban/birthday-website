@@ -7,6 +7,19 @@ html {
 }
 button {
   background-color: #f6c945;
+  corner-shape: round;
+  color: #4a3828;
+  border: #fff8e7;
+  border-radius: 5px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family:
+    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: medium;
+  cursor: pointer;
+  box-shadow: 1px 1px 10px rgba(74, 56, 40, 0.5);
 }
 #hbd {
   font-weight: bold;
@@ -21,7 +34,9 @@ button {
   padding: 15px;
   border: 2px solid #f6c945;
   /*  background-color: #fffdf5; */
-  box-shadow: 1px 1px 5px #332b0d;
+  box-shadow: 1px 1px 10px rgba(74, 56, 40, 0.5);
+  border-radius: 15px;
+  position: relative;
 }
 #secondsection {
   width: 700px;
@@ -31,6 +46,8 @@ button {
   margin-top: 5px;
   padding: 15px;
   border: 2px solid #f6c945;
+  box-shadow: 1px 1px 10px rgba(74, 56, 40, 0.5);
+  border-radius: 15px;
 }
 #thirdsection {
   width: 1000px;
@@ -40,6 +57,8 @@ button {
   margin-top: 5px;
   padding: 15px;
   border: 2px solid #f6c945;
+  box-shadow: 1px 1px 10px rgba(74, 56, 40, 0.5);
+  border-radius: 15px;
 }
 #fourthsection {
   width: 500px;
@@ -49,4 +68,17 @@ button {
   margin-top: 5px;
   padding: 15px;
   border: 2px solid #f6c945;
+  box-shadow: 1px 1px 10px rgba(74, 56, 40, 0.5);
+  border-radius: 15px;
+}
+#fourthsection img {
+  filter: blur(50px);
+  transition: filter 0.5s ease;
+}
+#fourthsection img:hover {
+  filter: blur(0);
+}
+#sunflower {
+  transform: scale(0.1);
+  position: absolute;
 }
