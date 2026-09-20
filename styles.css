@@ -27,6 +27,8 @@ button {
   line-height: 50px;
 }
 #firstsection {
+  overflow: visible;
+  position: relative;
   width: 500px;
   height: 200px;
   margin-right: auto;
@@ -36,7 +38,6 @@ button {
   /*  background-color: #fffdf5; */
   box-shadow: 1px 1px 10px rgba(74, 56, 40, 0.5);
   border-radius: 15px;
-  position: relative;
 }
 #secondsection {
   width: 700px;
@@ -60,6 +61,9 @@ button {
   box-shadow: 1px 1px 10px rgba(74, 56, 40, 0.5);
   border-radius: 15px;
 }
+#thirdsection img {
+  width: 300px;
+}
 #fourthsection {
   width: 500px;
   height: fit-content;
@@ -74,11 +78,15 @@ button {
 #fourthsection img {
   filter: blur(50px);
   transition: filter 0.5s ease;
+  width: 250px;
 }
 #fourthsection img:hover {
   filter: blur(0);
 }
 #sunflower {
-  transform: scale(0.1);
   position: absolute;
+  top: -30px;
+  right: -20px;
+  width: 10%;
+  rotate: -35deg;
 }
