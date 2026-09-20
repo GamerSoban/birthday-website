@@ -5,6 +5,13 @@ html {
   color: #4a3828;
   background-color: #fff8e7;
 }
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 button {
   background-color: #f6c945;
   corner-shape: round;
@@ -21,6 +28,7 @@ button {
   cursor: pointer;
   box-shadow: 1px 1px 10px rgba(74, 56, 40, 0.5);
 }
+
 #hbd {
   font-weight: bold;
   font-size: 20px;
@@ -29,6 +37,8 @@ button {
 #firstsection {
   overflow: visible;
   position: relative;
+  opacity: 1;
+  transition: opacity 0.5s ease;
   width: 500px;
   height: 200px;
   margin-right: auto;
@@ -40,6 +50,8 @@ button {
   border-radius: 15px;
 }
 #secondsection {
+  opacity: 1;
+  transition: opacity 0.5s ease;
   width: 700px;
   height: fit-content;
   margin-left: auto;
@@ -51,6 +63,8 @@ button {
   border-radius: 15px;
 }
 #thirdsection {
+  opacity: 1;
+  transition: opacity 0.5s ease;
   width: 1000px;
   height: fit-content;
   margin-left: auto;
@@ -65,6 +79,8 @@ button {
   width: 300px;
 }
 #fourthsection {
+  opacity: 1;
+  transition: opacity 0.5s ease;
   width: 500px;
   height: fit-content;
   margin-left: auto;
@@ -75,12 +91,18 @@ button {
   box-shadow: 1px 1px 10px rgba(74, 56, 40, 0.5);
   border-radius: 15px;
 }
+/*.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+} */
 #fourthsection img {
   filter: blur(50px);
   transition: filter 0.5s ease;
   width: 250px;
 }
 #fourthsection img:hover {
+  transition-delay: 0.2s;
   filter: blur(0);
 }
 #sunflower {
