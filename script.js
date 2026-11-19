@@ -2,18 +2,25 @@ const firstSection = document.getElementById("firstsection");
 const secondSection = document.getElementById("secondsection");
 const thirdSection = document.getElementById("thirdsection");
 const fourthSection = document.getElementById("fourthsection");
+const fifthSection = document.getElementById("fifthsection");
+const masterdiv = document.getElementById("masterdiv");
 
 const firstButton = document.getElementById("button_first");
 const secondButton = document.getElementById("second_button");
 const thirdButton = document.getElementById("third_button");
+const finalButton = document.getElementById("final_button");
+const lilyCanvas = document.getElementById("lilyView");
+let lilyStarted = false;
 
 secondSection.style.display = "none";
 thirdSection.style.display = "none";
 fourthSection.style.display = "none";
+fifthSection.style.display = "none";
 
 secondSection.style.opacity = "0";
 thirdSection.style.opacity = "0";
 fourthSection.style.opacity = "0";
+fifthSection.style.opacity = "0";
 
 function switchSection(currentSection, nextSection) {
   // Start next section invisible
@@ -44,4 +51,14 @@ secondButton.addEventListener("click", () => {
 
 thirdButton.addEventListener("click", () => {
   switchSection(thirdSection, fourthSection);
+});
+
+finalButton.addEventListener("click", () => {
+  fifthSection.setAttribute("aria-hidden", "false");
+  finalButton.disabled = true;
+  switchSection(fourthSection, fifthSection);
+  if (!lilyStarted) {
+    lilyStarted = true;
+    window.setTimeout(() => initLilyAnimation(lilyCanvas), 500);
+  }
 });

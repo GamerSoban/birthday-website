@@ -11,6 +11,9 @@ body {
   justify-content: center;
   align-items: center;
 }
+#masterdiv {
+  transition: opacity 0.5s ease;
+}
 
 button {
   background-color: #f6c945;
@@ -111,4 +114,23 @@ button {
   right: -20px;
   width: 10%;
   rotate: -35deg;
+}
+
+#fifthsection {
+  position: fixed;
+  z-index: 5;
+  inset: 0;
+  overflow: hidden;
+  background: #000;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+#lilyView {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #000;
 }
