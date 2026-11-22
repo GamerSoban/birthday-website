@@ -10,7 +10,57 @@ const secondButton = document.getElementById("second_button");
 const thirdButton = document.getElementById("third_button");
 const finalButton = document.getElementById("final_button");
 const lilyCanvas = document.getElementById("lilyView");
+const cursorTrail = document.getElementById("cursor-trail");
 let lilyStarted = false;
+
+const trailEnabled =
+  window.matchMedia("(hover: hover) and (pointer: fine)").matches &&
+  !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+let lastStarPosition = null;
+let starSpawnIndex = 0;
+
+function addTrailStar(x, y) {
+  const star = document.createElement("span");
+  const colors = ["#f6c945", "#fff8e7"];
+  star.className = "trail-star";
+  star.textContent = starSpawnIndex % 4 === 0 ? "★" : "✦";
+  star.style.left = `${x}px`;
+  star.style.top = `${y}px`;
+  star.style.setProperty("--star-color", colors[starSpawnIndex % colors.length]);
+  star.style.setProperty("--star-size", `${10 + Math.random() * 9}px`);
+  star.style.setProperty("--star-duration", `${650 + Math.random() * 350}ms`);
+  star.style.setProperty("--star-drop", `${30 + Math.random() * 45}px`);
+  star.style.setProperty("--star-drift", `${Math.random() * 36 - 18}px`);
+  star.style.setProperty("--star-rotation", `${Math.random() * 180 - 90}deg`);
+  cursorTrail.appendChild(star);
+  star.addEventListener("animationend", () => star.remove(), { once: true });
+  starSpawnIndex += 1;
+}
+
+if (trailEnabled) {
+  window.addEventListener("pointermove", (event) => {
+    if (event.pointerType === "touch") return;
+
+    const current = { x: event.clientX, y: event.clientY };
+    if (lastStarPosition) {
+      const distance = Math.hypot(
+        current.x - lastStarPosition.x,
+        current.y - lastStarPosition.y,
+      );
+      if (distance < 10) return;
+    }
+
+    addTrailStar(current.x, current.y);
+    if (starSpawnIndex % 3 === 0) {
+      addTrailStar(current.x + Math.random() * 12 - 6, current.y + Math.random() * 12 - 6);
+    }
+    lastStarPosition = current;
+  });
+
+  window.addEventListener("pointerleave", () => {
+    lastStarPosition = null;
+  });
+}
 
 secondSection.style.display = "none";
 thirdSection.style.display = "none";
